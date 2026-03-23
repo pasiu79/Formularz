@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Podanie o pracę</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        function pokazPytania() {
+            let stanowisko = document.getElementById("stanowisko").value;
+
+            document.getElementById("mechanik").style.display = "none";
+            document.getElementById("elektromechanik").style.display = "none";
+
+            if (stanowisko === "mechanik") {
+                document.getElementById("mechanik").style.display = "block";
+            } else if (stanowisko === "elektromechanik") {
+                document.getElementById("elektromechanik").style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Podanie o pracę</h2>
+
+            <form>
+
+                <h4>Dane osobowe</h4>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label">Imię</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Nazwisko</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Wiek</label>
+                    <input type="number" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Numer telefonu</label>
+                    <input type="tel" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Adres email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Stanowisko</label>
+                    <select class="form-select" id="stanowisko" onchange="pokazPytania()" required>
+                        <option value="">-- wybierz --</option>
+                        <option value="mechanik">Mechanik</option>
+                        <option value="elektromechanik">Elektromechanik</option>
+                    </select>
+                </div>
+
+                <div id="mechanik" style="display:none;">
+                    <h5>Pytania dla mechanika</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Ile lat doświadczenia masz jako mechanik?</label>
+                        <input type="number" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Jakie naprawy wykonujesz najczęściej?</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy znasz diagnostykę komputerową?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy potrafisz wymieniać rozrząd?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy masz doświadczenie w naprawie silników diesla?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy pracowałeś z układami hamulcowymi i zawieszeniem?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Jakie marki samochodów znasz najlepiej?</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy posiadasz prawo jazdy kategorii B?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy potrafisz pracować samodzielnie?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="elektromechanik" style="display:none;">
+                    <h5>Pytania dla elektromechanika</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy masz doświadczenie w instalacjach elektrycznych?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Jakie systemy elektryczne potrafisz naprawiać?</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy posiadasz uprawnienia SEP?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy potrafisz diagnozować usterki instalacji elektrycznej?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy pracowałeś z systemami CAN BUS?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy potrafisz czytać schematy elektryczne?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy masz doświadczenie w naprawie alternatorów i rozruszników?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Jakie narzędzia diagnostyczne znasz?</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Czy masz doświadczenie z samochodami hybrydowymi lub
+                            elektrycznymi?</label>
+                        <select class="form-select">
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" required>
+                    <label class="form-check-label">
+                        Wyrażam zgodę na przetwarzanie danych osobowych
+                    </label>
+                </div>
+
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Wyślij podanie</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
